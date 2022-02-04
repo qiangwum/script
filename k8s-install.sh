@@ -39,6 +39,6 @@ done
 
 echo "${yellow}现在是master节点${plain}"
 echo "${red}  部署 Dashboard ${plain}"
-wget https://gitee.com/guoshaosong/scripts/raw/master/dashboard.yaml
+wget https://github.com/qiangwum/script/blob/main/dashboard.yaml
 cd /k8s
 kubectl apply -f dashboard.yaml
