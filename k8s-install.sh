@@ -8,7 +8,7 @@ plain='\033[0m'
 echo -e "${red} 安装k8s-master节点${plain}"
 mkdir /k8s
 cd /k8s
-wget https://github.com/qiangwum/script/blob/main/k8s-plugin.sh && sh k8s-plugin.sh
+wget https://raw.githubusercontent.com/qiangwum/script/main/k8s-plugin.sh && sh k8s-plugin.sh
 #获取master节点ip
 master_ip=`ifconfig | grep -A 2 ^e.* |sed -n '2p'|sed -n 's/^.*inet//p'|awk '{ print $1 }'`
 # k8s master节点初始化
@@ -30,7 +30,7 @@ for node_ip in $ip_array
 do
 scp /b.sh root@$node_ip:/b.sh
 ssh root@$node_ip <<EOF
-wget https://github.com/qiangwum/script/blob/main/k8s-plugin.sh && sh k8s-plugin.sh && sh /b.sh
+wget https://raw.githubusercontent.com/qiangwum/script/main/k8s-plugin.sh && sh k8s-plugin.sh && sh /b.sh
 # 安装kubeadm、kubectl、kubelet
 exit
 EOF
@@ -39,6 +39,6 @@ done
 
 echo "${yellow}现在是master节点${plain}"
 echo "${red}  部署 Dashboard ${plain}"
-wget https://github.com/qiangwum/script/blob/main/dashboard.yaml
+wget https://raw.githubusercontent.com/qiangwum/script/main/dashboard.yaml
 cd /k8s
 kubectl apply -f dashboard.yaml
