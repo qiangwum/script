@@ -21,7 +21,7 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 kubeadm token create --print-join-command > /b.sh
 
 echo -e "${red}安装flannel${plain}"
-wget https://gitee.com/guoshaosong/scripts/raw/master/kube-flannel.yml
+wget https://raw.githubusercontent.com/qiangwum/script/main/kube-flannel.yml
 kubectl apply -f kube-flannel.yml
 
 #远程登录node节点
