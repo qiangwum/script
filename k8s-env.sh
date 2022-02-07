@@ -1,4 +1,15 @@
 #!/bin/bash
+
+#基于kubeadm部署k8s
+# master kubeadm，kubelet，kubectl，docker
+# node01 kubeadm，kubelet，kubectl，docker
+# node02 kubeadm，kubelet，kubectl，docker
+
+#[root@k8s-master ~]# vim /etc/hosts
+#192.168.1.12  k8s-master
+#192.168.1.13  k8s-node01
+#a92.168.1.14  k8s-node02
+#[root@master ~]# scp /etc/hosts 192.168.200.10:/etc/
 ###master 和node 节点都要执行
 #先手动配置host文件和hostname
 echo "nameserver 114.114.114.114" > /etc/resolv.conf
