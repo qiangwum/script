@@ -1,7 +1,7 @@
 #!/bin/bash
 ###master 和node 节点都要执行
 #先手动配置host文件和hostname
-echo "nameserver 114.114.114.114" >> /etc/resolv.conf
+echo "nameserver 114.114.114.114" > /etc/resolv.conf
 # 关闭防火墙
 systemctl disable firewalld
 systemctl stop firewalld
