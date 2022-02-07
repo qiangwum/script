@@ -13,8 +13,11 @@ mkdir -p $HOME/.kube
 sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 
-
+##如果不能下载就手动复制吧
 wget https://raw.githubusercontent.com/qiangwum/script/main/kube-flannel.yml
 kubectl apply -f kube-flannel.yml
+
+
+###最后把各个node节点加入master就安装完成了
 
 
