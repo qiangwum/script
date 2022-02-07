@@ -1,6 +1,6 @@
 #!/bin/bash
 
-
+#master节点执行
 mkdir /k8s
 cd /k8s
 
