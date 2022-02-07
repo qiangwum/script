@@ -54,7 +54,7 @@ EOF
 yum install -y docker-ce-18.09.9-3.el7
 # 启动docker
 systemctl enable docker && systemctl start docker
-}
+
 
 yum install -y kubectl-1.16.0-0 kubeadm-1.16.0-0 kubelet-1.16.0-0 >> /dev/null
 # 启动kubelet服务
