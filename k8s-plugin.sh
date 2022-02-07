@@ -1,26 +1,6 @@
 #!/bin/bash
-
-red='\033[0;31m'
-green='\033[0;32m'
-yellow='\033[0;33m'
-plain='\033[0m'
-
-echo -e "
-##############################################################
-#${red}欢迎使用centos7一键安装k8s脚本${plain}
-#${yellow}请先设置/etc/hosts主机名解析${plain}
-# File Name: diskless.sh
-# Version: V1.0
-# Author: guoshao
-# Blog Site: https://space.bilibili.com/302918169/video
-# Created Time : 2021-09-03 00:46:18
-# Environment: CentOS 7.2 Kernal 3.10.0
-##############################################################
-"
-sleep 6
-
-system_optimization(){
-echo -e "${red}进行系统优化${plain}"
+#先手动配置host文件和hostname
+echo "nameserver 114.114.114.114" >> /etc/resolv.conf
 # 关闭防火墙
 systemctl disable firewalld
 systemctl stop firewalld
