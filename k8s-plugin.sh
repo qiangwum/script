@@ -31,11 +31,6 @@ repo_gpgcheck=1
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
 
-
-docker_install(){
-echo -e "${red}安装dokcer，并进行优化${plain}"
-sleep 2
-
 # 安装docker所需的工具
 yum install -y yum-utils device-mapper-persistent-data lvm2 >>/dev/null
 # 配置阿里云的docker源
