@@ -30,7 +30,7 @@ gpgcheck=1
 repo_gpgcheck=1
 gpgkey=https://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg https://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
 EOF
-}
+
 
 docker_install(){
 echo -e "${red}安装dokcer，并进行优化${plain}"
@@ -60,8 +60,7 @@ yum install -y docker-ce-18.09.9-3.el7
 # 启动docker
 systemctl enable docker && systemctl start docker
 }
-system_optimization 
-docker_install >> /dev/null
+
 yum install -y kubectl-1.16.0-0 kubeadm-1.16.0-0 kubelet-1.16.0-0 >> /dev/null
 # 启动kubelet服务
 systemctl enable kubelet && systemctl start kubelet
