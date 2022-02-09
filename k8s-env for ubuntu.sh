@@ -1,6 +1,8 @@
 
 #ubuntu  env配置：
 swapoff -a
+# 永久禁用，打开/etc/fstab注释掉swap那一行。
+sed -i 's/.*swap.*/#&/' /etc/fstab
 # 修改内核参数
 systemctl disable ufw
 systemctl stop ufw
@@ -17,11 +19,11 @@ sysctl --system
 sudo apt-get update && sudo apt-get install -y apt-transport-https curl
 
 sudo curl -s https://mirrors.aliyun.com/kubernetes/apt/doc/apt-key.gpg | sudo apt-key add -
-
+命令好像有问题，手动添加吧。
 sudo tee /etc/apt/sources.list.d/kubernetes.list <<-'EOF'
 deb https://mirrors.aliyun.com/kubernetes/apt kubernetes-xenial main
 EOF
-
+刷新软件仓库
 sudo apt-get update
 #查看可用的版面
 apt-cache madison kubeadm
