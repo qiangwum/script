@@ -7,3 +7,4 @@
 5. kubectl label pod/node nginx wq=qiang    给已经创建好的pod打label ，也可以给node打标签（搭配nodeSeletor使用）
 6. kubectl get pod --show-labels   查询标签
 7. kubectl taint NODE k8s-node01 checknode=node:NoSchedule  给你某个节点设置taint   
+8. kubectl taint nodes node1 key1=value1:NoSchedule-        取消节点的taint
