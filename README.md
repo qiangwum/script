@@ -1,5 +1,6 @@
 # 这里放的是k8s部署的一些脚本~
-# 常用的一些命名和介绍：
+## 常用的一些命名和介绍：
+<font color="#660066">深紫色文字</font><br /> 
 1. kubectl run  --image=nginx nginx -o yaml --dry-run=client > nginx.yaml  使用命令生成yaml
 2. kubectl get pod busybox -o yaml 同上
 3. kubectl explain pod.spec.affinity   命令忘记了查询
