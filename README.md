@@ -8,3 +8,4 @@
 6. kubectl get pod --show-labels   查询标签
 7. kubectl taint NODE k8s-node01 checknode=node:NoSchedule  给你某个节点设置taint   
 8. kubectl taint nodes node1 key1=value1:NoSchedule-        取消节点的taint
+9. kubectl expose pod nginx --name nginxservice --port 8888 --target-port 80   用pod创建service
