@@ -59,7 +59,4 @@ kubeadm config images list --kubernetes-version=v1.22.6
 
 kubeadm init  --image-repository registry.aliyuncs.com/google_containers --kubernetes-version=v1.22.6   --pod-network-cidr=10.244.0.0/16
 
-kubectl apply -f https://docs.projectcalico.org/v3.10/manifests/calico.yaml
-
-# kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
-# kubectl apply -f https://docs.projectcalico.org/v3.10/manifests/calico.yaml
+kubectl apply -f https://gitee.com/qiangwum/scripts/raw/master/calico.yaml
